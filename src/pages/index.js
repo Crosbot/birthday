@@ -7,13 +7,14 @@ const IndexPage = () => {
 };
 
 const Cannon = () => {
-  const { reward: confettiReward, isAnimating } = useReward('rewardId', 'confetti', { lifetime: 200, angle: 45, decay: 0.94, spread: 45, startVelocity: 35, elementCount: 250, elementSize: 8, zIndex: 0, position: "fixed", colors: ['#A45BF1', '#25C6F6', '#72F753', '#F76C88', '#F5F770'] });
-  const { reward: balloonsReward, isBalloonsAnimating } = useReward('balloonsReward', 'balloons', { angle: 90, spread: 90, elementCount: 15 });
+  const { reward: confettiReward, isAnimating: isConfettiAnimating } = useReward('rewardId', 'confetti', { lifetime: 100, angle: 45, decay: 0.94, spread: 45, startVelocity: 35, elementCount: 250, elementSize: 10, zIndex: 0, position: "fixed", colors: ['#A45BF1', '#25C6F6', '#72F753', '#F76C88', '#F5F770'] });
+  const { reward: balloonsReward, isAnimating: isBalloonsAnimating } = useReward('balloonsReward', 'balloons', { lifetime: 600, angle: 90, spread: 90, elementCount: 15, elementSize: 35, zIndex: -100 });
   const [isTextVisible, setIsTextVisible] = useState(false);
 
 
   const handleRewardClick = () => {
-    if (!isAnimating) { confettiReward() };
+    console.log("test", isConfettiAnimating, isBalloonsAnimating)
+    if (!isConfettiAnimating) { confettiReward() };
     if (!isBalloonsAnimating) { balloonsReward() };
     setIsTextVisible(true);
   };
@@ -28,7 +29,6 @@ const Cannon = () => {
       )
       }
       <div style={{ height: "50vw" }} />
-      <span id="balloonsReward" />
 
       <span
         id="rewardId"
@@ -42,6 +42,7 @@ const Cannon = () => {
       >
         🎉
       </span>
+      <span id="balloonsReward" width="100vw" />
       <div style={{ height: "25vw" }} />
 
     </div >
