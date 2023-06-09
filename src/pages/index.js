@@ -23,7 +23,7 @@ const Cannon = () => {
     <div style={{ paddingBottom: "32px", display: 'flex', flexDirection: "column", justifyContent: 'flex-end', alignItems: 'center', height: '100vh', width: '100vw' }}>
       {isTextVisible && (
         <div className="fade-in-text">
-          <p style={{ fontFamily: "sans-serif", fontSize: "3.2em", textAlign: 'center', fontWeight: "bold", padding: "8px" }}>Happy Birthday <span style={{ color: "#e20b6d" }}>Anne!</span></p>
+          <p style={{ fontFamily: "sans-serif", fontSize: "3.2em", textAlign: 'center', fontWeight: "bold", padding: "8px" }}>Happy Birthday <span style={{ color: "#e20b6d" }}>Carolyn!</span></p>
         </div>
       )
       }
