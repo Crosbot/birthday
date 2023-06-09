@@ -42,6 +42,8 @@ const Cannon = () => {
       >
         🎉
       </span>
+      <div style={{ height: "25vw" }} />
+
     </div >
   );
 };
